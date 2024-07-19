@@ -4,7 +4,6 @@ import { FaReact, FaNode, FaGitAlt } from "react-icons/fa";
 import { IoCheckmarkSharp, IoLogoFirebase, IoLogoJavascript } from "react-icons/io5";
 import { RiNextjsFill, RiNextjsLine, RiTailwindCssFill } from "react-icons/ri";
 import { SiAdobephotoshop, SiExpress, SiMongodb, SiRedux, SiSanity } from "react-icons/si";
-export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const stack = [

@@ -5,30 +5,6 @@ export const dynamic = "force-dynamic";
 
 const index = async () => {
   const data = await getProjects();
-  console.log(data)
-    const projects = [
-        {
-          title: 'Lablsy',
-          stack: ['React Js', 'Firebase', 'Tailwind'],
-          live: '',
-          desc: 'Dictionary web app, with chat and quiz features',
-          imageUrl: '/assets/labsly.netlify.app_login.png'
-        },
-        {
-          title: 'Lablsy',
-          stack: ['React Js', 'Firebase', 'Tailwind'],
-          live: '',
-          desc: '',
-          imageUrl: '/assets/labsly.netlify.app_login.png'
-        },
-        {
-          title: 'Lablsy',
-          stack: ['React Js', 'Firebase', 'Tailwind'],
-          live: '',
-          desc: '',
-          imageUrl: '/assets/labsly.netlify.app_login.png'
-        }
-      ]
       
   return (
     <div className="mt-5 mb-10">
