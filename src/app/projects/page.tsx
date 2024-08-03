@@ -2,6 +2,7 @@ import { getProjects } from '@/sanity/query';
 import Link from 'next/link'
 import React from 'react'
 export const dynamic = "force-dynamic";
+export const revalidate = 60; // revalidate at most every hour
 
 const index = async () => {
   const data = await getProjects();

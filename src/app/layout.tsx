@@ -3,6 +3,7 @@ import { Inter,Lato,Josefin_Sans, Montserrat } from "next/font/google";
 import "./globals.css";
 import Layout from "@/components/Layout";
 export const dynamic = "force-dynamic";
+export const revalidate = 60; // revalidate at most every hour
 
 const inter = Montserrat({ weight: ["100",'300', '400', '700',], subsets: ['latin'] });
 
