@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter,Lato,Josefin_Sans, Montserrat } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Layout from "@/components/Layout";
+
 export const dynamic = "force-dynamic";
 export const revalidate = 60; // revalidate at most every hour
 
-const inter = Montserrat({ weight: ["100",'300', '400', '700',], subsets: ['latin'] });
+const montserrat = Montserrat({ weight: ["100",'300', '400', '700',], subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "Ezi-umeonu Menuchim",
@@ -19,10 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Layout>
+      <body className={montserrat.className}>
         {children}
-        </Layout>
         </body>
     </html>
   );

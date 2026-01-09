@@ -13,7 +13,7 @@ const index = async () => {
 
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-5">
       {
-        data.map((project:any)=> <Link href={project.liveLink} className="flex flex-col gap-1 group border-b py-7 sm:border-o sm:py=0">
+        data.map((project:any)=> <Link href={project.liveLink} target='_blank' className="flex flex-col gap-1 group border-b py-7 sm:border-o sm:py=0">
         <img src={project.image.url} className="rounded-md object-cover filters grayscale 
         ease-in duration-200 group-hover:grayscale-0 aspect-[1.7/1]" alt="" />
         <h4 className="text-lg font-semibold mt-2">{project.title}</h4>
