@@ -88,18 +88,20 @@ export default async function Home() {
           <h3 className="text-xl">Experience</h3>
 
           <div className='flex flex-col justify-center items-center w-3 mt-5'>
+
         <div className='h-3 w-3 rounded-full bg-[#272727] relative'>
             <div className="absolute left-[250%] top-[-50%] text-black flex flex-col whitespace-nowrap">
-                <h3 className='font-semibold text-[#272727]'>Frontend Developer</h3>
-                <p className='text-sm'> Quickleap (Sep 2023 - Present)</p>
+                <h3 className='font-semibold text-[#272727]'>Frontend Engineer</h3>
+                <p className='text-sm'> Alphatwelve (Nov 2024 - Present)</p>
             </div>
         </div>
+
         <div className='h-20 w-0.5 bg-[#ebebeb]'></div>
 
         <div className='h-3 w-3 rounded-full bg-[#ebebeb] relative'>
         <div className="absolute left-[250%] top-[-50%] text-black flex flex-col whitespace-nowrap">
-                <h3 className='font-semibold text-[#272727]'>Web Developer </h3>
-                <p className='text-sm'> Freelancer (August 2022 - July 2023)</p>
+                <h3 className='font-semibold text-[#272727]'>Frontend Developer </h3>
+                <p className='text-sm'> Quickleap (Sep 2023 - August 2024)</p>
             </div>
         </div>
 
