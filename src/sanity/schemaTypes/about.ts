@@ -6,11 +6,29 @@ export const about = defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'tagline',
+      title: 'Tagline',
+      type: 'string',
+      description: 'Your professional title, e.g. "Senior Frontend Engineer". This appears prominently on the homepage.',
+    }),
+    defineField({
       name: 'desc',
       title: 'Description',
       type: 'text',
       description: 'A multi-line description about yourself',
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'aboutExpansion',
+      title: 'About Expansion',
+      type: 'text',
+      description: 'A short paragraph on how you approach problems — not just a skills list. Optional but recommended.',
+    }),
+    defineField({
+      name: 'currentlyExploring',
+      title: 'Currently Exploring',
+      type: 'string',
+      description: 'What you are actively learning or deepening right now, e.g. "PGD in Computer Science, diving deeper into system design."',
     }),
     defineField({
       name: 'email',

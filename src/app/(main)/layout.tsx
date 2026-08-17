@@ -1,9 +1,12 @@
 import Layout from "@/components/Layout";
+import { getMyDetails } from "@/sanity/query";
 
-export default function MainLayout({
+export default async function MainLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <Layout>{children}</Layout>;
+  const data = await getMyDetails();
+
+  return <Layout tagline={data?.tagline}>{children}</Layout>;
 }
