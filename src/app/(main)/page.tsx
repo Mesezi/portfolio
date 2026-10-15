@@ -3,7 +3,8 @@ import { BiLogoTypescript } from "react-icons/bi";
 import { FaReact, FaGitAlt, FaNode, FaSass } from "react-icons/fa";
 import { IoLogoFirebase, IoLogoJavascript } from "react-icons/io5";
 import { RiNextjsLine, RiTailwindCssFill } from "react-icons/ri";
-import { SiAdobephotoshop, SiExpress, SiPrisma, SiRedux, SiSanity, SiSupabase } from "react-icons/si";
+import { BsDatabase } from "react-icons/bs";
+import { SiAdobephotoshop, SiExpress, SiPostgresql, SiPrisma, SiRedis, SiRedux, SiSanity, SiSupabase } from "react-icons/si";
 
 export default async function Home() {
   const stack = [
@@ -15,6 +16,9 @@ export default async function Home() {
     { icon: <SiExpress size={20} />, title: "Express" },
     { icon: <SiPrisma size={20} />, title: "Prisma" },
     { icon: <SiSupabase size={20} />, title: "Supabase" },
+    { icon: <SiPostgresql size={20} />, title: "PostgreSQL" },
+    { icon: <BsDatabase size={20} />, title: "Neon" },
+    { icon: <SiRedis size={20} />, title: "Redis" },
     { icon: <RiTailwindCssFill size={20} />, title: "Tailwind CSS" },
     { icon: <FaSass size={20} />, title: "Sass" },
     { icon: <SiRedux size={20} />, title: "Redux Toolkit" },
