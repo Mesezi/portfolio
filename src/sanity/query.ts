@@ -46,3 +46,19 @@ export async function getProjects() {
     return [];
   }
 }
+
+export async function getExperiences() {
+  try {
+    return await client.fetch(`*[_type == "experience"] | order(order asc, startDate desc) {
+      role,
+      company,
+      startDate,
+      endDate,
+      description,
+      order
+    }`);
+  } catch (err) {
+    console.error('Failed to fetch experiences:', err);
+    return [];
+  }
+}

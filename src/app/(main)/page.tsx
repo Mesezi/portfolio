@@ -1,4 +1,4 @@
-import { getMyDetails } from "@/sanity/query";
+import { getExperiences, getMyDetails } from "@/sanity/query";
 import { BiLogoTypescript } from "react-icons/bi";
 import { FaReact, FaGitAlt, FaNode, FaSass } from "react-icons/fa";
 import { IoLogoFirebase, IoLogoJavascript } from "react-icons/io5";
@@ -25,6 +25,7 @@ export default async function Home() {
   ];
 
   const data = await getMyDetails();
+  const experiences = await getExperiences();
 
   return (
     <main className="flex flex-col">
@@ -55,23 +56,33 @@ export default async function Home() {
       <div className="my-10">
         <h3 className="text-xl">Experience</h3>
 
-        <div className="flex flex-col justify-center items-center w-3 mt-5">
-          <div className="h-3 w-3 rounded-full bg-[#272727] relative">
-            <div className="absolute left-[250%] top-[-50%] text-black flex flex-col whitespace-nowrap">
-              <h3 className="font-semibold text-[#272727]">Frontend Engineer</h3>
-              <p className="text-sm">Alphatwelve (Nov 2024 - Present)</p>
-            </div>
-          </div>
+        {experiences.length > 0 ? (
+          <div className="mt-5 ml-1 border-l-2 border-[#ebebeb] pl-6 space-y-6">
+            {experiences.map((experience: {
+              role: string;
+              company: string;
+              startDate: string;
+              endDate?: string;
+              description?: string;
+            }) => {
+              const formatDate = (date: string) =>
+                new Date(`${date}T00:00:00`).toLocaleDateString('en', { month: 'short', year: 'numeric' });
 
-          <div className="h-20 w-0.5 bg-[#ebebeb]"></div>
-
-          <div className="h-3 w-3 rounded-full bg-[#ebebeb] relative">
-            <div className="absolute left-[250%] top-[-50%] text-black flex flex-col whitespace-nowrap">
-              <h3 className="font-semibold text-[#272727]">Frontend Developer</h3>
-              <p className="text-sm">Quickleap (Sep 2023 - Oct 2024)</p>
-            </div>
+              return (
+                <article key={`${experience.company}-${experience.startDate}`} className="relative">
+                  <span className="absolute -left-[31px] top-1 h-3 w-3 rounded-full bg-[#272727]" />
+                  <h4 className="font-semibold text-[#272727]">{experience.role}</h4>
+                  <p className="text-sm text-[#555]">
+                    {experience.company} ({formatDate(experience.startDate)} - {experience.endDate ? formatDate(experience.endDate) : 'Present'})
+                  </p>
+                  {experience.description && <p className="mt-2 text-sm text-[#272727]/80">{experience.description}</p>}
+                </article>
+              );
+            })}
           </div>
-        </div>
+        ) : (
+          <p className="mt-4 text-sm text-[#272727]/60">No experience added yet.</p>
+        )}
       </div>
     </main>
   );

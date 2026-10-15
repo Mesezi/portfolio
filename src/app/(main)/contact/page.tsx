@@ -1,6 +1,5 @@
 'use client'
-import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useState, type FormEvent } from 'react'
 import { RiLoader4Fill } from 'react-icons/ri'
 
 const page = () => {
@@ -12,19 +11,20 @@ const page = () => {
     const [loading, setLoading] = useState(false)
 
 
-const handleSubmit = async (e: any)=>{
+const handleSubmit = async (e: FormEvent<HTMLFormElement>)=>{
     e.preventDefault()
     if(loading)
         return
     setLoading(true)
     try{
-        const sendEmailRes =  await axios.post("/api/sendUserEmail", formDetails, {
-            headers: {
-                "Content-Type": "text/html",
-            },
-        } );
+        const formData = new FormData(e.currentTarget)
+        const response = await fetch('https://formspree.io/f/mbgrrdbg', {
+            method: 'POST',
+            body: formData,
+            headers: { Accept: 'application/json' },
+        });
 
-        if (sendEmailRes?.status === 200) {
+        if (response.ok) {
             window.alert("Message sent");
             setFormDetails({
                 email: '',

@@ -3,5 +3,6 @@
 
 import { about } from './about';
 import { project } from './project';
+import { experience } from './experience';
 
-export const schemaTypes = [about, project];
+export const schemaTypes = [about, project, experience];
